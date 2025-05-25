@@ -51,26 +51,56 @@
             margin-top: 0;
         }
 
-        table {
+        /* Nueva estructura para tablas individuales */
+        .requirement-container {
+            margin-bottom: 40px;
+        }
+
+        .requirement-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #59494f;
+            background-color: #6b565c;
+            border: 3px solid #8e6f74;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        th, td {
-            border: 2px solid #8e6f74;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
+        .requirement-header {
             background-color: #8e6f74;
             color: #e0c9c7;
+            text-align: center;
+            font-weight: bold;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #3f343a;
         }
 
-        tr:nth-child(even) {
+        .requirement-row {
+            display: table-row;
+        }
+
+        .requirement-label {
+            background-color: #8e6f74;
+            color: #e0c9c7;
+            padding: 12px 15px;
+            font-weight: bold;
+            width: 25%;
+            border-right: 2px solid #3f343a;
+            border-bottom: 1px solid #59494f;
+        }
+
+        .requirement-content {
             background-color: #6b565c;
+            color: #cda8ad;
+            padding: 12px 15px;
+            border-bottom: 1px solid #59494f;
+            width: 75%;
+        }
+
+        .requirement-row:last-child .requirement-label,
+        .requirement-row:last-child .requirement-content {
+            border-bottom: none;
         }
 
         .code-container {
@@ -202,64 +232,146 @@
 
         <section class="section">
             <h2>REQUERIMIENTOS FUNCIONALES</h2>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Entradas</th>
-                    <th>Resultados</th>
-                </tr>
-                <tr>
-                    <td>R1</td>
-                    <td>iniciarJuego</td>
-                    <td>El sistema inicia una nueva partida del juego Ahorcado.</td>
-                    <td>Ninguna</td>
-                    <td>Selecciona palabra aleatoria, establece estado a JUGANDO, inicializa intentos a 6, limpia jugadas anteriores.</td>
-                </tr>
-                <tr>
-                    <td>R2</td>
-                    <td>jugarLetra</td>
-                    <td>El sistema procesa la letra jugada por el usuario.</td>
-                    <td>Letra</td>
-                    <td>Retorna falso si ya fue usada. Muestra letra en posiciones correctas. Cambia estado a AHORCADO o GANADOR según corresponda.</td>
-                </tr>
-                <tr>
-                    <td>R3</td>
-                    <td>darPalabraActual</td>
-                    <td>Muestra el estado actual de la palabra con letras adivinadas.</td>
-                    <td>Ninguna</td>
-                    <td>Retorna representación actual de la palabra con letras adivinadas y guiones para no adivinadas.</td>
-                </tr>
-                <tr>
-                    <td>R4</td>
-                    <td>darIntentosDisponibles</td>
-                    <td>Proporciona la cantidad de intentos restantes.</td>
-                    <td>Ninguna</td>
-                    <td>Retorna número de intentos disponibles.</td>
-                </tr>
-                <tr>
-                    <td>R5</td>
-                    <td>letraUtilizada</td>
-                    <td>Verifica si una letra ya fue jugada.</td>
-                    <td>Letra</td>
-                    <td>Retorna verdadero si la letra YA fue utilizada, falso en caso contrario.</td>
-                </tr>
-                <tr>
-                    <td>R6</td>
-                    <td>darEstado</td>
-                    <td>Proporciona el estado actual del juego.</td>
-                    <td>Ninguna</td>
-                    <td>Retorna estado actual: NO_INICIADO, JUGANDO, GANADOR o AHORCADO.</td>
-                </tr>
-                <tr>
-                    <td>R7</td>
-                    <td>darOcurrencias</td>
-                    <td>Muestra las posiciones donde aparece una letra en la palabra.</td>
-                    <td>Ninguna</td>
-                    <td>Retorna lista de strings indicando posiciones de letras adivinadas.</td>
-                </tr>
-            </table>
+            
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R1: iniciarJuego</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">El sistema inicia una nueva partida del juego Ahorcado.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Ninguna</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Selecciona palabra aleatoria, establece estado a JUGANDO, inicializa intentos a 6, limpia jugadas anteriores.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R2: jugarLetra</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">El sistema procesa la letra jugada por el usuario.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Letra</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna falso si ya fue usada. Muestra letra en posiciones correctas. Cambia estado a AHORCADO o GANADOR según corresponda.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R3: darPalabraActual</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">Muestra el estado actual de la palabra con letras adivinadas.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Ninguna</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna representación actual de la palabra con letras adivinadas y guiones para no adivinadas.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R4: darIntentosDisponibles</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">Proporciona la cantidad de intentos restantes.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Ninguna</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna número de intentos disponibles.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R5: letraUtilizada</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">Verifica si una letra ya fue jugada.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Letra</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna verdadero si la letra YA fue utilizada, falso en caso contrario.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R6: darEstado</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">Proporciona el estado actual del juego.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Ninguna</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna estado actual: NO_INICIADO, JUGANDO, GANADOR o AHORCADO.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="requirement-container">
+                <table class="requirement-table">
+                    <tr>
+                        <td class="requirement-header" colspan="2">R7: darOcurrencias</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Descripción</td>
+                        <td class="requirement-content">Muestra las posiciones donde aparece una letra en la palabra.</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Entradas</td>
+                        <td class="requirement-content">Ninguna</td>
+                    </tr>
+                    <tr class="requirement-row">
+                        <td class="requirement-label">Resultados</td>
+                        <td class="requirement-content">Retorna lista de strings indicando posiciones de letras adivinadas.</td>
+                    </tr>
+                </table>
+            </div>
         </section>
 
         <section class="section">
@@ -430,4 +542,15 @@ class Palabra:
         """
         self.letras = []
         for caracter in p_palabra :
-            self.letras.append(Letra(caracter))
+            self.letras.append(Letra(caracter))</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <button class="github-button" onclick="window.open('https://github.com/Jenifufa/AhorcadoCode', '_blank')">
+        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+    </button>
+</body>
+</html>
