@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO FINAL : AHORCADO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #3f343a;
+            color: #cda8ad;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #59494f;
+            border-bottom: 5px solid #8e6f74;
+        }
+
+        h1 {
+            color: #e0c9c7;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #8e6f74;
+        }
+
+        .section {
+            background-color: #59494f;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border: 3px solid #8e6f74;
+        }
+
+        h2 {
+            color: #e0c9c7;
+            border-bottom: 2px solid #8e6f74;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #59494f;
+        }
+
+        th, td {
+            border: 2px solid #8e6f74;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #8e6f74;
+            color: #e0c9c7;
+        }
+
+        tr:nth-child(even) {
+            background-color: #6b565c;
+        }
+
+        .code-container {
+            background-color: #3f343a;
+            border: 2px solid #8e6f74;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            color: #cda8ad;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .filename {
+            background-color: #8e6f74;
+            color: #e0c9c7;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+
+        .diagram-placeholder {
+            background-color: #59494f;
+            border: 3px dashed #8e6f74;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            color: #cda8ad;
+            font-size: 1.2rem;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .member {
+            background-color: #8e6f74;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .member-id {
+            color: #e0c9c7;
+            font-size: 0.8rem;
+        }
+
+        .university-info {
+            text-align: center;
+            padding: 15px;
+            background-color: #8e6f74;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .github-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8e6f74;
+            color: #e0c9c7;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        .github-button:hover {
+            background-color: #6b565c;
+        }
+
+        .github-icon {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PROYECTO FINAL : AHORCADO</h1>
+        </header>
+
+        <section class="section">
+            <h2>INICIO</h2>
+            <div class="team-members">
+                <div class="member">
+                    <h3>Jenifer Urbano</h3>
+                    <p class="member-id">ID: 927575</p>
+                </div>
+                <div class="member">
+                    <h3>Zara Calvache</h3>
+                    <p class="member-id">ID: 927517</p>
+                </div>
+                <div class="member">
+                    <h3>Andrés Bolaños</h3>
+                    <p class="member-id">ID: 922647</p>
+                </div>
+            </div>
+
+            <div class="university-info">
+                <h3>Universidad Cooperativa de Colombia</h3>
+                <p>Ingeniería de Software</p>
+                <p>Primer semestre -  1B</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>DIAGRAMA DE CLASES</h2>
+            <div class="diagram-placeholder">
+                [ESPACIO PARA DIAGRAMA DE CLASES]
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>REQUERIMIENTOS FUNCIONALES</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Entradas</th>
+                    <th>Resultados</th>
+                </tr>
+                <tr>
+                    <td>R1</td>
+                    <td>iniciarJuego</td>
+                    <td>El sistema inicia una nueva partida del juego Ahorcado.</td>
+                    <td>Ninguna</td>
+                    <td>Selecciona palabra aleatoria, establece estado a JUGANDO, inicializa intentos a 6, limpia jugadas anteriores.</td>
+                </tr>
+                <tr>
+                    <td>R2</td>
+                    <td>jugarLetra</td>
+                    <td>El sistema procesa la letra jugada por el usuario.</td>
+                    <td>Letra</td>
+                    <td>Retorna falso si ya fue usada. Muestra letra en posiciones correctas. Cambia estado a AHORCADO o GANADOR según corresponda.</td>
+                </tr>
+                <tr>
+                    <td>R3</td>
+                    <td>darPalabraActual</td>
+                    <td>Muestra el estado actual de la palabra con letras adivinadas.</td>
+                    <td>Ninguna</td>
+                    <td>Retorna representación actual de la palabra con letras adivinadas y guiones para no adivinadas.</td>
+                </tr>
+                <tr>
+                    <td>R4</td>
+                    <td>darIntentosDisponibles</td>
+                    <td>Proporciona la cantidad de intentos restantes.</td>
+                    <td>Ninguna</td>
+                    <td>Retorna número de intentos disponibles.</td>
+                </tr>
+                <tr>
+                    <td>R5</td>
+                    <td>letraUtilizada</td>
+                    <td>Verifica si una letra ya fue jugada.</td>
+                    <td>Letra</td>
+                    <td>Retorna verdadero si la letra YA fue utilizada, falso en caso contrario.</td>
+                </tr>
+                <tr>
+                    <td>R6</td>
+                    <td>darEstado</td>
+                    <td>Proporciona el estado actual del juego.</td>
+                    <td>Ninguna</td>
+                    <td>Retorna estado actual: NO_INICIADO, JUGANDO, GANADOR o AHORCADO.</td>
+                </tr>
+                <tr>
+                    <td>R7</td>
+                    <td>darOcurrencias</td>
+                    <td>Muestra las posiciones donde aparece una letra en la palabra.</td>
+                    <td>Ninguna</td>
+                    <td>Retorna lista de strings indicando posiciones de letras adivinadas.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>CÓDIGO FUENTE</h2>
+            
+            <div class="code-container">
+                <div class="filename">JuegoAhorcado.py</div>
+                <pre><code>import random
+from enum import Enum
+from typing import List
+from src.Palabra import Palabra
+from src.Letra import Letra
+
+
+class Estado(Enum):
+    NO_INICIADO = 1
+    JUGANDO = 2
+    GANADOR = 3
+    AHORCADO = 4
+
+class JuegoAhorcado:
+    TOTAL_PALABRAS = 12
+    MAX_INTENTOS = 6
+
+    def __init__(self):
+        self.diccionario: List[Palabra] = [
+            Palabra("algoritmo"),
+            Palabra("contenedora"),
+            Palabra("avance"),
+            Palabra("ciclo"),
+            Palabra("indice"),
+            Palabra("instrucciones"),
+            Palabra("arreglo"),
+            Palabra("vector"),
+            Palabra("inicio"),
+            Palabra("cuerpo"),
+            Palabra("recorrido"),
+            Palabra("patron"),
+        ]
+    
+        self.palabra_actual = None  # No hay palabra seleccionada al inicio
+        self.jugadas = []  # Lista vacía de jugadas
+        self.intentos_disponibles = self.MAX_INTENTOS  # Empezamos con el máximo de intentos
+        self.estado = Estado.NO_INICIADO  # El juego no ha comenzado
+
+        
+
+    def iniciar_juego(self):
+        indice_aleatorio = random.randint(0, self.TOTAL_PALABRAS - 1) # primero, se selecciona una palabra aleatoriamente del diccionario
+        self.palabra_actual = self.diccionario[indice_aleatorio]
+        
+        
+        self.jugadas = []  # Se reiniciae el estado del juego, se limpia las jugadas anteriores
+        self.intentos_disponibles = self.MAX_INTENTOS  # Restauracion los intentos
+        self.estado = Estado.JUGANDO  # Se cambia el estado a jugando
+
+
+    def jugar_letra(self, letra: Letra) -> bool:
+    
+        if self.estado != Estado.JUGANDO:  # Solo se puede jugar si el juego está en estado JUGANDO
+            return False
+        
+        if self.letra_utilizada(letra): # Se verifica si la letra ya fue utilizada
+            return False  # No se puede repetir letras
+        
+        self.jugadas.append(letra) # se agrega la letra a las jugadas
+        
+        if self.palabra_actual.esta_letra(letra): # Se verifica si la letra está en la palabra
+            # La letra está en la palabra - acierto
+
+            if self.palabra_actual.esta_completa(self.jugadas):
+                self.estado = Estado.GANADOR  # se verifica es si el jugador ha ganado
+            return True
+        else:
+            
+            self.intentos_disponibles -= 1  # La letra no está en la palabra - fallo, entonces pierde un intento
+            
+            if self.intentos_disponibles == 0: # se verficasi el jugador ha perdido
+                self.estado = Estado.AHORCADO
+            return False
+
+
+    def dar_palabra_actual(self) -> Palabra:
+        return self.palabra_actual
+
+
+    def dar_palabra(self, posicion: int) -> Palabra:
+        if 0 <= posicion < len(self.diccionario):
+            return self.diccionario[posicion]
+        else:
+            return None
+
+
+    def dar_intentos_disponibles(self) -> int:
+        return self.intentos_disponibles
+
+
+    def dar_jugadas(self) -> List[Letra]:
+        return self.jugadas
+
+
+    def dar_ocurrencias(self) -> List[Letra]:
+        if self.palabra_actual is None :
+            return []  #lista con las letras adivinadas o _ para las que no se han adivinado
+        else:
+            return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
+
+
+    def dar_estado(self) -> Estado:
+        return self.estado
+
+
+    def letra_utilizada(self, letra: Letra) -> bool:
+        for jugada in self.jugadas :
+            if jugada == letra:
+                return True #la letra ya fue utilizada
+        return False #la letra ha sido utilizada
+
+    def metodo1(self) -> str:
+        return "Respuesta 1" 
+
+    def metodo2(self) -> str:
+        return "Respuesta 2"</code></pre>
+            </div>
+
+            <div class="code-container">
+                <div class="filename">Letra.py</div>
+                <pre><code>class Letra:
+
+    def __init__(self, p_letra: str):
+        """
+        Crea una nueva letra a partir de un carácter dado.
+        :param p_letra: Variable de tipo str que representa un carácter para inicializar la letra.
+        """
+        self.letra = p_letra.lower() #la letra se guarda e minuscula para facilitar conmparaciones
+
+    def dar_letra(self) -> str:
+        """
+        Devuelve el carácter que representa la letra.
+        :return: Un carácter con la letra.
+        """
+        return self.letra
+    
+    def es_igual(self, otra_letra: 'Letra') -> bool:
+        """
+        Indica si dos letras son iguales, sin importar si una está en mayúscula y otra en minúscula.
+        :param otra_letra: La letra para comparar.
+        :return: True si las letras son iguales sin importar mayúsculas/minúsculas, False de lo contrario.
+        """
+        return self.letra.lower() == otra_letra.letra.lower() #se compara ls letras en min paara ignorar may/min</code></pre>
+            </div>
+
+            <div class="code-container">
+                <div class="filename">Palabra.py</div>
+                <pre><code>from typing import List
+from src.Letra import Letra
+
+class Palabra:
+    """
+    Clase para representar una palabra del juego.
+    letras : lista [Letra] - lista de objetos Letra que forman la plabra.
+    """
+
+    def __init__(self, p_palabra: str):
+        """
+        Construye una nueva palabra a partir de su representación en string.
+        :param p_palabra: La palabra que se quiere construir.
+        """
+        self.letras = []
+        for caracter in p_palabra :
+            self.letras.append(Letra(caracter))
