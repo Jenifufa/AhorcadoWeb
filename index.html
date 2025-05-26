@@ -116,6 +116,8 @@
             margin: 0;
             color: #cda8ad;
             font-family: 'Courier New', Courier, monospace;
+            font-size: 1.6em; /* Tamaño de letra aumentado */
+            line-height: 1.6; /* Espaciado aumentado */
         }
 
         .filename {
@@ -125,6 +127,7 @@
             display: inline-block;
             margin-bottom: 10px;
             border-radius: 3px;
+            font-size: 1.1em; /* Tamaño de letra aumentado */
         }
 
         .diagram-placeholder {
@@ -190,6 +193,33 @@
         .github-icon {
             width: 30px;
             height: 30px;
+        }
+
+        /* Estilos para las barras de scroll */
+        .code-container::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        .code-container::-webkit-scrollbar-track {
+            background: #3f343a;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .code-container::-webkit-scrollbar-thumb {
+            background: #8e6f74;
+            border-radius: 5px;
+        }
+
+        .code-container::-webkit-scrollbar-thumb:hover {
+            background: #cda8ad;
+        }
+
+        /* Barra indicadora */
+        .scroll-indicator {
+            text-align: center;
+            color: #8e6f74;
+            font-size: 0.8em;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -495,6 +525,7 @@ class JuegoAhorcado:
 
     def metodo2(self) -> str:
         return "Respuesta 2"</code></pre>
+                <div class="scroll-indicator">← Desplázate horizontalmente para ver más contenido →</div>
             </div>
 
             <div class="code-container">
@@ -522,6 +553,7 @@ class JuegoAhorcado:
         :return: True si las letras son iguales sin importar mayúsculas/minúsculas, False de lo contrario.
         """
         return self.letra.lower() == otra_letra.letra.lower() #se compara ls letras en min paara ignorar may/min</code></pre>
+                <div class="scroll-indicator">← Desplázate horizontalmente para ver más contenido →</div>
             </div>
 
             <div class="code-container">
@@ -543,6 +575,7 @@ class Palabra:
         self.letras = []
         for caracter in p_palabra :
             self.letras.append(Letra(caracter))</code></pre>
+                <div class="scroll-indicator">← Desplázate horizontalmente para ver más contenido →</div>
             </div>
         </section>
     </div>
