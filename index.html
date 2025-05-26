@@ -371,6 +371,7 @@ class JuegoAhorcado:
         self.intentos_disponibles = self.MAX_INTENTOS  # Empezamos con el máximo de intentos
         self.estado = Estado.NO_INICIADO  # El juego no ha comenzado
 
+                    
     ### métodos
     
     __method__= "iniciar_juego"
@@ -488,6 +489,7 @@ class JuegoAhorcado:
     def __init__(self, p_letra: str):
         self.letra = p_letra.lower() #la letra se guarda e minuscula para facilitar conmparaciones
 
+
     ### métodos
 
     __method__ = "dar_letra"
@@ -503,7 +505,7 @@ class JuegoAhorcado:
     __description__ = "Método que sirve para comparar dos letras sin importar mayúsculas o minúsculas"
     def es_igual(self, otra_letra: 'Letra') -> bool:
         return self.letra.lower() == otra_letra.letra.lower() #se compara ls letras en min paara ignorar may/min</code></pre>
-                <div class="scroll-indicator">← Desplázate horizontalmente para ver más contenido →</div>
+                <div class="scroll-indicator">← →</div>
             </div>
 
             <div class="code-container">
@@ -513,17 +515,16 @@ from typing import List
 from src.Letra import Letra
 
 class Palabra:
-    """
-    Clase para representar una palabra del juego.
-    letras : lista [Letra] - lista de objetos Letra que forman la plabra.
-    """
 
+    ### constructor
     def __init__(self, p_palabra: str):
         self.letras = []
         for caracter in p_palabra :
             self.letras.append(Letra(caracter))
 
-
+                    
+    ### métodos
+                    
     __method__ = "esta_completa"
     __params__ = "p_jugadas"
     __return__ = "bool"
@@ -575,12 +576,8 @@ class Palabra:
     __return__ = "List[Letra]"
     __description__ = "Devuelve el arreglo con las letras de la palabra."
     def dar_letras(self) -> List[Letra]:
-        """
-        Devuelve el arreglo con las letras de la palabra.
-        :return: Lista de letras que componen la palabra.
-        """
         return self.letras</code></pre>
-                <div class="scroll-indicator">← Desplázate horizontalmente para ver más contenido →</div>
+                <div class="scroll-indicator">← →</div>
             </div>
         </section>
     </div>
