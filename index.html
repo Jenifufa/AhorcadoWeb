@@ -266,19 +266,19 @@
             <div class="requirement-container">
                 <table class="requirement-table">
                     <tr>
-                        <td class="requirement-header" colspan="2">R1: iniciarJuego</td>
+                        <td class="requirement-header" colspan="2">R1: IniciarPartida</td>
                     </tr>
                     <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">El sistema inicia una nueva partida del juego Ahorcado.</td>
+                        <td class="requirement-label">Resumen</td>
+                        <td class="requirement-content">El sistema debe permitir al usuario iniciar una nueva partida del juego AHORCADO.</td>
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Ninguna</td>
+                        <td class="requirement-content">nuevaPartida</td>
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Selecciona palabra aleatoria, establece estado a JUGANDO, inicializa intentos a 6, limpia jugadas anteriores.</td>
+                        <td class="requirement-content">El sistema selecciona una palabra aleatoria, establece el estado a JUGANDO, inicializa intentos a 6 y limpia jugadas anteriores.</td>
                     </tr>
                 </table>
             </div>
@@ -289,8 +289,8 @@
                         <td class="requirement-header" colspan="2">R2: jugarLetra</td>
                     </tr>
                     <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">El sistema procesa la letra jugada por el usuario.</td>
+                        <td class="requirement-label">Resumen</td>
+                        <td class="requirement-content">El sistema debe permitir al ususario seleccionar una letra del alfabeto durante una partida, validando que la letra no haya sido usada previamente.</td>
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Entradas</td>
@@ -298,7 +298,7 @@
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna falso si ya fue usada. Muestra letra en posiciones correctas. Cambia estado a AHORCADO o GANADOR según corresponda.</td>
+                        <td class="requirement-content">Retorna falso si la letra ya fue usada. Si no, muestra la letra en posiciones correctas y se agrega a la lista de letras utilizadas. Si ya fue completada la palabra con esta letra, cambia estado a AHORCADO o GANADOR según corresponda.</td>
                     </tr>
                 </table>
             </div>
@@ -306,102 +306,24 @@
             <div class="requirement-container">
                 <table class="requirement-table">
                     <tr>
-                        <td class="requirement-header" colspan="2">R3: darPalabraActual</td>
+                        <td class="requirement-header" colspan="2">R3: visualizarResultadoDeLetraEscogida</td>
                     </tr>
                     <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">Muestra el estado actual de la palabra con letras adivinadas.</td>
+                        <td class="requirement-label">Resumen</td>
+                        <td class="requirement-content">El sistema debe procesar la letra seleccionada por el usuario y mostrar el resultado correspondiente, validando después de cada intento, si el usuario ha ganado o perdido y actualizando el estado del juego.</td>
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Ninguna</td>
+                        <td class="requirement-content">Letra, EstadoActualJuego</td>
                     </tr>
                     <tr class="requirement-row">
                         <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna representación actual de la palabra con letras adivinadas y guiones para no adivinadas.</td>
+                        <td class="requirement-content">El sistema retorna si el usuario ganó, adivinando todas las letras dentro de los intentos disponibles, o perdió, si los ha agotado y el dibujo del ahorcado se ha completado.</td>
                     </tr>
                 </table>
             </div>
 
-            <div class="requirement-container">
-                <table class="requirement-table">
-                    <tr>
-                        <td class="requirement-header" colspan="2">R4: darIntentosDisponibles</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">Proporciona la cantidad de intentos restantes.</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Ninguna</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna número de intentos disponibles.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="requirement-container">
-                <table class="requirement-table">
-                    <tr>
-                        <td class="requirement-header" colspan="2">R5: letraUtilizada</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">Verifica si una letra ya fue jugada.</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Letra</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna verdadero si la letra YA fue utilizada, falso en caso contrario.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="requirement-container">
-                <table class="requirement-table">
-                    <tr>
-                        <td class="requirement-header" colspan="2">R6: darEstado</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">Proporciona el estado actual del juego.</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Ninguna</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna estado actual: NO_INICIADO, JUGANDO, GANADOR o AHORCADO.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="requirement-container">
-                <table class="requirement-table">
-                    <tr>
-                        <td class="requirement-header" colspan="2">R7: darOcurrencias</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Descripción</td>
-                        <td class="requirement-content">Muestra las posiciones donde aparece una letra en la palabra.</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Entradas</td>
-                        <td class="requirement-content">Ninguna</td>
-                    </tr>
-                    <tr class="requirement-row">
-                        <td class="requirement-label">Resultados</td>
-                        <td class="requirement-content">Retorna lista de strings indicando posiciones de letras adivinadas.</td>
-                    </tr>
-                </table>
-            </div>
+            
         </section>
 
         <section class="section">
