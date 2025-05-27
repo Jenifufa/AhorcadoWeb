@@ -441,7 +441,7 @@ class JuegoAhorcado:
 
     def dar_ocurrencias(self) -> List[Letra]:
         if self.palabra_actual is None :
-            return []  #lista con las letras adivinadas o _ para las que no se han adivinado
+            return []  
         else:
             return self.palabra_actual.dar_ocurrencias(self.jugadas)  #letras visibles de la pálabra actual
 
